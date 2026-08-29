@@ -1,0 +1,137 @@
+.bb-bank-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: min(100%, 430px);
+  aspect-ratio: 1.586 / 1;
+
+  padding: 28px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+
+  background: radial-gradient(
+      circle at 85% 15%,
+      rgba(255, 255, 255, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #17121f 0%, #241a32 45%, #6420bf 100%);
+
+  color: #ffffff;
+
+  box-shadow: 0 24px 60px rgba(32, 22, 40, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  isolation: isolate;
+}
+
+.bb-bank-card__glow {
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background: rgba(164, 61, 242, 0.35);
+
+  filter: blur(25px);
+
+  z-index: -1;
+}
+
+.bb-bank-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bb-bank-card__brand {
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.bb-bank-card__chip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 44px;
+  height: 34px;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background: linear-gradient(135deg, #f0dba5, #b9974f);
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.bb-bank-card__chip span {
+  border-right: 1px solid rgba(74, 55, 22, 0.3);
+}
+
+.bb-bank-card__chip span:last-child {
+  border-right: 0;
+}
+
+.bb-bank-card__number {
+  display: flex;
+  gap: 14px;
+
+  margin-top: auto;
+  margin-bottom: 28px;
+
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+}
+
+.bb-bank-card__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.bb-bank-card__label,
+.bb-bank-card__value {
+  display: block;
+}
+
+.bb-bank-card__label {
+  margin-bottom: 4px;
+
+  color: rgba(255, 255, 255, 0.64);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bb-bank-card__value {
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 520px) {
+  .bb-bank-card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .bb-bank-card__number {
+    gap: 8px;
+    font-size: 18px;
+  }
+}

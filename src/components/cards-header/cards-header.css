@@ -1,0 +1,38 @@
+.bb-cards-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.bb-cards-header__eyebrow {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--bb-color-primary, #a43df2);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bb-cards-header__title {
+  margin: 0;
+
+  color: var(--bb-color-text-primary, #211a29);
+
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.bb-cards-header__description {
+  margin: 8px 0 0;
+
+  color: var(--bb-color-text-secondary, #756c7e);
+
+  font-size: 15px;
+  line-height: 1.6;
+}

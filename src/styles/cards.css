@@ -1,0 +1,49 @@
+.bb-cards {
+  min-height: 100vh;
+
+  padding: 40px;
+
+  background: var(--bb-color-background, #f7f6fa);
+
+  font-family: var(
+    --bb-font-family,
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif
+  );
+
+  box-sizing: border-box;
+}
+
+.bb-cards__container {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .bb-cards {
+    padding: 24px;
+  }
+}
+
+.bb-cards__content {
+  display: grid;
+  grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+  gap: 32px;
+
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .bb-cards__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bb-cards__details {
+  min-width: 0;
+}
