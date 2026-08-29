@@ -1,7 +1,7 @@
 .bb-card-actions {
-  margin-top: 0px;
+  margin-top: 0;
 
-  padding: 24px;
+  padding: 22px 24px;
 
   border: 1px solid var(--bb-color-border, #e8e3ec);
   border-radius: 20px;
@@ -9,6 +9,8 @@
   background: var(--bb-color-surface, #ffffff);
 
   box-shadow: var(--bb-shadow-card, 0 12px 32px rgba(32, 22, 40, 0.07));
+
+  box-sizing: border-box;
 }
 
 .bb-card-actions__eyebrow {
@@ -34,11 +36,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .bb-card-actions__button {
-  min-height: 48px;
+  min-height: 44px;
 
   padding: 0 16px;
 

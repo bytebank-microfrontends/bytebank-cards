@@ -19,7 +19,7 @@
 
 .bb-cards__container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1180px;
 
   margin: 0 auto;
 }
@@ -32,14 +32,15 @@
 
 .bb-cards__content {
   display: grid;
-  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+  grid-template-columns: 360px 520px;
   grid-template-areas:
     "card overview"
     "actions actions";
 
-  gap: 24px 48px;
+  gap: 24px 40px;
 
   align-items: start;
+  justify-content: start;
 
   margin-top: 32px;
 }
@@ -49,11 +50,18 @@
 }
 
 .bb-card-overview {
-  grid-area: overview;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 520px;
 }
 
 .bb-cards__actions {
   grid-area: actions;
+
+  max-width: 920px;
 }
 
 @media (max-width: 1000px) {
