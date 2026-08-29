@@ -32,20 +32,36 @@
 
 .bb-cards__content {
   display: grid;
-  grid-template-columns: minmax(300px, 390px) minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+  grid-template-areas:
+    "card overview"
+    "actions actions";
+
+  gap: 24px 32px;
 
   align-items: start;
 
   margin-top: 32px;
 }
 
-@media (max-width: 900px) {
-  .bb-cards__content {
-    grid-template-columns: 1fr;
-  }
+.bb-bank-card {
+  grid-area: card;
 }
 
-.bb-cards__details {
-  min-width: 0;
+.bb-card-overview {
+  grid-area: overview;
+}
+
+.bb-cards__actions {
+  grid-area: actions;
+}
+
+@media (max-width: 1000px) {
+  .bb-cards__content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card"
+      "overview"
+      "actions";
+  }
 }

@@ -25,14 +25,14 @@ export default function Root() {
             brand={primaryCard.brand}
           />
 
-          <div className="bb-cards__details">
-            <CardOverview
-              currentInvoice={cardOverview.currentInvoice}
-              availableLimit={cardOverview.availableLimit}
-              usedLimit={cardOverview.usedLimit}
-              totalLimit={cardOverview.totalLimit}
-            />
+          <CardOverview
+            currentInvoice={cardOverview.currentInvoice}
+            availableLimit={cardOverview.availableLimit}
+            usedLimit={cardOverview.usedLimit}
+            totalLimit={cardOverview.totalLimit}
+          />
 
+          <div className="bb-cards__actions">
             <CardActions />
           </div>
         </div>
