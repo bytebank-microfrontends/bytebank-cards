@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import "./components/block-card-modal/block-card-modal.css";
+import "./components/unblock-card-modal/unblock-card-modal.css";
 import "./styles/cards.css";
 import "./components/cards-header/cards-header.css";
 import "./components/bank-card/bank-card.css";
@@ -16,6 +17,7 @@ import CardActions from "./components/card-actions/CardActions";
 import InvoiceModal from "./components/invoice-modal/InvoiceModal";
 import LimitModal from "./components/limit-modal/LimitModal";
 import BlockCardModal from "./components/block-card-modal/BlockCardModal";
+import UnblockCardModal from "./components/unblock-card-modal/UnblockCardModal";
 
 import { primaryCard, cardOverview, currentInvoice } from "./data/cards.mock";
 
@@ -34,6 +36,10 @@ export default function Root() {
   function handleConfirmLimit(newLimit) {
     setTotalLimit(newLimit);
     setActiveModal(null);
+  }
+
+  function handleConfirmUnblock() {
+    setCardStatus("active");
   }
 
   const availableLimit = totalLimit - cardOverview.usedLimit;
@@ -64,6 +70,7 @@ export default function Root() {
               onViewInvoice={() => setActiveModal("invoice")}
               onAdjustLimit={() => setActiveModal("limit")}
               onBlockCard={() => setActiveModal("block")}
+              onUnblockCard={() => setActiveModal("unblock")}
             />
           </div>
         </div>
@@ -90,6 +97,14 @@ export default function Root() {
         email="f***@email.com"
         onClose={handleCloseModal}
         onConfirmBlock={handleConfirmBlock}
+      />
+
+      <UnblockCardModal
+        isOpen={activeModal === "unblock"}
+        phone="(**) *****-4821"
+        email="f***@email.com"
+        onClose={handleCloseModal}
+        onConfirmUnblock={handleConfirmUnblock}
       />
     </section>
   );

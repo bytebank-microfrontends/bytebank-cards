@@ -1,28 +1,29 @@
-const actions = [
-  {
-    id: "invoice",
-    label: "Ver fatura",
-  },
-  {
-    id: "limit",
-    label: "Ajustar limite",
-  },
-  {
-    id: "block",
-    label: "Bloquear cartão",
-  },
-];
-
 export default function CardActions({
+  cardStatus = "active",
   onViewInvoice,
   onAdjustLimit,
   onBlockCard,
+  onUnblockCard,
 }) {
-  const actionHandlers = {
-    invoice: onViewInvoice,
-    limit: onAdjustLimit,
-    block: onBlockCard,
-  };
+  const isBlocked = cardStatus === "blocked";
+
+  const actions = [
+    {
+      id: "invoice",
+      label: "Ver fatura",
+      handler: onViewInvoice,
+    },
+    {
+      id: "limit",
+      label: "Ajustar limite",
+      handler: onAdjustLimit,
+    },
+    {
+      id: isBlocked ? "unblock" : "block",
+      label: isBlocked ? "Desbloquear cartão" : "Bloquear cartão",
+      handler: isBlocked ? onUnblockCard : onBlockCard,
+    },
+  ];
 
   return (
     <section className="bb-card-actions">
@@ -38,7 +39,7 @@ export default function CardActions({
             key={action.id}
             type="button"
             className="bb-card-actions__button"
-            onClick={actionHandlers[action.id]}
+            onClick={action.handler}
           >
             {action.label}
           </button>
