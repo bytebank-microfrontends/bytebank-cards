@@ -29,6 +29,7 @@ export default function Root() {
             <CardOverview
               currentInvoice={cardOverview.currentInvoice}
               availableLimit={cardOverview.availableLimit}
+              usedLimit={cardOverview.usedLimit}
               totalLimit={cardOverview.totalLimit}
             />
 

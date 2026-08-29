@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  width: min(100%, 430px);
+  width: min(100%, 390px);
   aspect-ratio: 1.586 / 1;
 
   padding: 28px;
@@ -54,9 +54,24 @@
 }
 
 .bb-bank-card__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   font-size: 18px;
   font-weight: 750;
   letter-spacing: -0.02em;
+}
+
+.bb-bank-card__brand-logo {
+  display: block;
+
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 6px 14px rgba(164, 61, 242, 0.22));
 }
 
 .bb-bank-card__chip {

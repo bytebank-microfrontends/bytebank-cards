@@ -1,3 +1,5 @@
+import bytebankSymbol from "../../assets/bytebank-symbol.png";
+
 export default function BankCard({
   holderName,
   lastFourDigits,
@@ -9,7 +11,16 @@ export default function BankCard({
       <div className="bb-bank-card__glow" aria-hidden="true" />
 
       <div className="bb-bank-card__header">
-        <span className="bb-bank-card__brand">{brand}</span>
+        <div className="bb-bank-card__brand">
+          <img
+            src={bytebankSymbol}
+            alt=""
+            className="bb-bank-card__brand-logo"
+            aria-hidden="true"
+          />
+
+          <span>{brand}</span>
+        </div>
 
         <span className="bb-bank-card__chip" aria-hidden="true">
           <span />

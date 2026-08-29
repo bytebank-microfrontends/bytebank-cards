@@ -1,54 +1,42 @@
-.bb-card-overview {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+.bb-card-overview__limit {
+  margin-top: 18px;
 }
 
-.bb-card-overview__item {
-  padding: 24px;
+.bb-card-overview__limit-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 
-  border: 1px solid var(--bb-color-border, #e8e3ec);
-  border-radius: 20px;
-
-  background: var(--bb-color-surface, #ffffff);
-
-  box-shadow: var(--bb-shadow-card, 0 12px 32px rgba(32, 22, 40, 0.07));
-}
-
-.bb-card-overview__label,
-.bb-card-overview__helper {
-  display: block;
-}
-
-.bb-card-overview__label {
-  color: var(--bb-color-text-secondary, #756c7e);
-
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.bb-card-overview__value {
-  display: block;
-
-  margin-top: 10px;
-
-  color: var(--bb-color-text-primary, #211a29);
-
-  font-size: 26px;
-  font-weight: 750;
-  letter-spacing: -0.03em;
-}
-
-.bb-card-overview__helper {
-  margin-top: 6px;
+  margin-bottom: 8px;
 
   color: var(--bb-color-text-secondary, #756c7e);
 
   font-size: 12px;
+  font-weight: 600;
 }
 
-@media (max-width: 640px) {
-  .bb-card-overview {
-    grid-template-columns: 1fr;
-  }
+.bb-card-overview__progress {
+  width: 100%;
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: var(--bb-color-surface-soft, #f0edf4);
+}
+
+.bb-card-overview__progress-value {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    var(--bb-color-primary, #a43df2),
+    var(--bb-color-primary-dark, #6420bf)
+  );
+
+  transition: width 300ms ease;
 }

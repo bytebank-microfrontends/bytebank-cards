@@ -6,7 +6,8 @@ export const primaryCard = {
 };
 
 export const cardOverview = {
-  currentInvoice: "R$ 2.184,30",
-  availableLimit: "R$ 7.815,70",
-  totalLimit: "R$ 10.000,00",
+  currentInvoice: 2184.3,
+  availableLimit: 7815.7,
+  usedLimit: 2184.3,
+  totalLimit: 10000,
 };
