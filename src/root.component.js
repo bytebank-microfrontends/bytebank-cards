@@ -67,6 +67,7 @@ export default function Root() {
 
           <div className="bb-cards__actions">
             <CardActions
+              cardStatus={cardStatus}
               onViewInvoice={() => setActiveModal("invoice")}
               onAdjustLimit={() => setActiveModal("limit")}
               onBlockCard={() => setActiveModal("block")}
