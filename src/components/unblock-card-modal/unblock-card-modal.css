@@ -183,6 +183,7 @@
 }
 
 .bb-unblock-modal__button--primary {
+  width: 100%;
   border: 0;
 
   background: linear-gradient(
