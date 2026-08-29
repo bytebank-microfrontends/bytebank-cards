@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  width: min(100%, 390px);
+  width: min(100%, 360px);
   aspect-ratio: 1.586 / 1;
 
   padding: 28px;
