@@ -1,0 +1,124 @@
+.bb-invoice-modal__backdrop {
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 24px;
+
+  background: rgba(23, 18, 31, 0.58);
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+.bb-invoice-modal {
+  width: min(100%, 520px);
+
+  padding: 28px;
+
+  border: 1px solid var(--bb-color-border, #e8e3ec);
+  border-radius: 24px;
+
+  background: var(--bb-color-surface, #ffffff);
+
+  box-shadow: 0 30px 80px rgba(23, 18, 31, 0.28);
+}
+
+.bb-invoice-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.bb-invoice-modal__eyebrow {
+  color: var(--bb-color-primary, #a43df2);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bb-invoice-modal__title {
+  margin: 5px 0 0;
+
+  color: var(--bb-color-text-primary, #211a29);
+
+  font-size: 24px;
+}
+
+.bb-invoice-modal__close {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: var(--bb-color-surface-soft, #f0edf4);
+
+  color: var(--bb-color-text-primary, #211a29);
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.bb-invoice-modal__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-top: 28px;
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background: var(--bb-color-surface-soft, #f0edf4);
+}
+
+.bb-invoice-modal__summary span,
+.bb-invoice-modal__summary small {
+  color: var(--bb-color-text-secondary, #756c7e);
+}
+
+.bb-invoice-modal__summary strong {
+  color: var(--bb-color-text-primary, #211a29);
+
+  font-size: 28px;
+}
+
+.bb-invoice-modal__transactions {
+  margin-top: 20px;
+}
+
+.bb-invoice-modal__transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid var(--bb-color-border, #e8e3ec);
+}
+
+.bb-invoice-modal__transaction:last-child {
+  border-bottom: 0;
+}
+
+.bb-invoice-modal__transaction div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bb-invoice-modal__transaction span {
+  color: var(--bb-color-text-secondary, #756c7e);
+  font-size: 12px;
+}

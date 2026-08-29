@@ -13,7 +13,17 @@ const actions = [
   },
 ];
 
-export default function CardActions() {
+export default function CardActions({
+  onViewInvoice,
+  onAdjustLimit,
+  onBlockCard,
+}) {
+  const actionHandlers = {
+    invoice: onViewInvoice,
+    limit: onAdjustLimit,
+    block: onBlockCard,
+  };
+
   return (
     <section className="bb-card-actions">
       <div className="bb-card-actions__header">
@@ -28,6 +38,7 @@ export default function CardActions() {
             key={action.id}
             type="button"
             className="bb-card-actions__button"
+            onClick={actionHandlers[action.id]}
           >
             {action.label}
           </button>
