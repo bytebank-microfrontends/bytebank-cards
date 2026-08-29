@@ -36,11 +36,6 @@ export default function Root() {
     setActiveModal(null);
   }
 
-  function handleBlockCard() {
-    // eslint-disable-next-line no-console
-    console.log("Bloquear cartão");
-  }
-
   const availableLimit = totalLimit - cardOverview.usedLimit;
 
   return (
@@ -68,7 +63,7 @@ export default function Root() {
             <CardActions
               onViewInvoice={() => setActiveModal("invoice")}
               onAdjustLimit={() => setActiveModal("limit")}
-              onBlockCard={handleBlockCard}
+              onBlockCard={() => setActiveModal("block")}
             />
           </div>
         </div>
