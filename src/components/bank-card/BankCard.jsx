@@ -5,9 +5,15 @@ export default function BankCard({
   lastFourDigits,
   expiresAt,
   brand = "ByteBank",
+  status = "active",
 }) {
+  const isBlocked = status === "blocked";
+
   return (
-    <article className="bb-bank-card" aria-label="Cartão ByteBank">
+    <article
+      className={`bb-bank-card ${isBlocked ? "bb-bank-card--blocked" : ""}`}
+      aria-label="Cartão ByteBank"
+    >
       <div className="bb-bank-card__glow" aria-hidden="true" />
 
       <div className="bb-bank-card__header">
@@ -49,6 +55,12 @@ export default function BankCard({
           <strong className="bb-bank-card__value">{expiresAt}</strong>
         </div>
       </div>
+
+      {isBlocked && (
+        <div className="bb-bank-card__status" role="status">
+          Cartão bloqueado
+        </div>
+      )}
     </article>
   );
 }

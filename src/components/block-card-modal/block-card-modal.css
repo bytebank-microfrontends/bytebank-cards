@@ -1,0 +1,245 @@
+.bb-block-modal__backdrop {
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 24px;
+
+  background: rgba(23, 18, 31, 0.58);
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+
+.bb-block-modal {
+  width: min(100%, 500px);
+
+  padding: 28px;
+
+  border: 1px solid var(--bb-color-border, #e8e3ec);
+  border-radius: 24px;
+
+  background: var(--bb-color-surface, #ffffff);
+
+  box-shadow: 0 30px 80px rgba(23, 18, 31, 0.28);
+
+  box-sizing: border-box;
+}
+
+.bb-block-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.bb-block-modal__eyebrow {
+  color: var(--bb-color-primary, #a43df2);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bb-block-modal__title {
+  margin: 5px 0 0;
+
+  color: var(--bb-color-text-primary, #211a29);
+
+  font-size: 24px;
+}
+
+.bb-block-modal__close {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: var(--bb-color-surface-soft, #f0edf4);
+
+  color: var(--bb-color-text-primary, #211a29);
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.bb-block-modal__content {
+  margin-top: 28px;
+}
+
+.bb-block-modal__description {
+  margin: 0;
+
+  color: var(--bb-color-text-secondary, #756c7e);
+
+  line-height: 1.6;
+}
+
+.bb-block-modal__channel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 12px;
+  padding: 18px;
+
+  border: 1px solid var(--bb-color-border, #e8e3ec);
+  border-radius: 16px;
+
+  background: var(--bb-color-surface, #ffffff);
+
+  color: var(--bb-color-text-primary, #211a29);
+
+  cursor: pointer;
+}
+
+.bb-block-modal__channel:hover {
+  border-color: var(--bb-color-primary, #a43df2);
+
+  background: rgba(164, 61, 242, 0.05);
+}
+
+.bb-block-modal__label {
+  display: block;
+
+  margin-top: 22px;
+
+  color: var(--bb-color-text-secondary, #756c7e);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bb-block-modal__otp {
+  width: 100%;
+
+  margin-top: 8px;
+  padding: 16px;
+
+  border: 1px solid var(--bb-color-border, #e8e3ec);
+  border-radius: 14px;
+
+  background: var(--bb-color-surface, #ffffff);
+
+  color: var(--bb-color-text-primary, #211a29);
+
+  font: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+
+  box-sizing: border-box;
+}
+
+.bb-block-modal__otp:focus {
+  border-color: var(--bb-color-primary, #a43df2);
+  outline: 3px solid rgba(164, 61, 242, 0.12);
+}
+
+.bb-block-modal__helper {
+  margin: 8px 0 0;
+
+  color: var(--bb-color-text-secondary, #756c7e);
+
+  font-size: 11px;
+}
+
+.bb-block-modal__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.bb-block-modal__button {
+  min-height: 46px;
+
+  border-radius: 14px;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.bb-block-modal__button--secondary {
+  border: 1px solid var(--bb-color-border, #e8e3ec);
+
+  background: var(--bb-color-surface, #ffffff);
+
+  color: var(--bb-color-text-primary, #211a29);
+}
+
+.bb-block-modal__button--danger {
+  border: 0;
+
+  background: var(--bb-color-danger, #d54755);
+
+  color: #ffffff;
+}
+
+.bb-block-modal__button--primary {
+  width: 100%;
+
+  border: 0;
+
+  background: linear-gradient(
+    135deg,
+    var(--bb-color-primary, #a43df2),
+    var(--bb-color-primary-dark, #6420bf)
+  );
+
+  color: #ffffff;
+}
+
+.bb-block-modal__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.bb-block-modal__success {
+  padding: 24px;
+
+  text-align: center;
+}
+
+.bb-block-modal__success > span {
+  display: grid;
+  place-items: center;
+
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 16px;
+
+  border-radius: 50%;
+
+  background: rgba(18, 128, 92, 0.12);
+
+  color: var(--bb-color-success, #12805c);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.bb-block-modal__success h3 {
+  margin: 0;
+
+  color: var(--bb-color-text-primary, #211a29);
+}
+
+.bb-block-modal__success p {
+  color: var(--bb-color-text-secondary, #756c7e);
+}

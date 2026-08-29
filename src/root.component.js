@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import "./components/block-card-modal/block-card-modal.css";
 import "./styles/cards.css";
 import "./components/cards-header/cards-header.css";
 import "./components/bank-card/bank-card.css";
@@ -14,13 +15,18 @@ import CardOverview from "./components/card-overview/CardOverview";
 import CardActions from "./components/card-actions/CardActions";
 import InvoiceModal from "./components/invoice-modal/InvoiceModal";
 import LimitModal from "./components/limit-modal/LimitModal";
+import BlockCardModal from "./components/block-card-modal/BlockCardModal";
 
 import { primaryCard, cardOverview, currentInvoice } from "./data/cards.mock";
 
 export default function Root() {
   const [activeModal, setActiveModal] = useState(null);
   const [totalLimit, setTotalLimit] = useState(cardOverview.totalLimit);
+  const [cardStatus, setCardStatus] = useState("active");
 
+  function handleConfirmBlock() {
+    setCardStatus("blocked");
+  }
   function handleCloseModal() {
     setActiveModal(null);
   }
@@ -48,6 +54,7 @@ export default function Root() {
             lastFourDigits={primaryCard.lastFourDigits}
             expiresAt={primaryCard.expiresAt}
             brand={primaryCard.brand}
+            status={cardStatus}
           />
 
           <CardOverview
@@ -80,6 +87,14 @@ export default function Root() {
         maximumLimit={15000}
         onClose={handleCloseModal}
         onConfirm={handleConfirmLimit}
+      />
+
+      <BlockCardModal
+        isOpen={activeModal === "block"}
+        phone="(**) *****-4821"
+        email="f***@email.com"
+        onClose={handleCloseModal}
+        onConfirmBlock={handleConfirmBlock}
       />
     </section>
   );
