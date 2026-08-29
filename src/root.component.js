@@ -6,35 +6,36 @@ import "./components/bank-card/bank-card.css";
 import "./components/card-overview/card-overview.css";
 import "./components/card-actions/card-actions.css";
 import "./components/invoice-modal/invoice-modal.css";
+import "./components/limit-modal/limit-modal.css";
 
 import CardsHeader from "./components/cards-header/CardsHeader";
 import BankCard from "./components/bank-card/BankCard";
 import CardOverview from "./components/card-overview/CardOverview";
 import CardActions from "./components/card-actions/CardActions";
 import InvoiceModal from "./components/invoice-modal/InvoiceModal";
+import LimitModal from "./components/limit-modal/LimitModal";
 
 import { primaryCard, cardOverview, currentInvoice } from "./data/cards.mock";
 
 export default function Root() {
-  const [isInvoiceOpen, setIsInvoiceOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState(null);
+  const [totalLimit, setTotalLimit] = useState(cardOverview.totalLimit);
 
-  function handleOpenInvoice() {
-    setIsInvoiceOpen(true);
+  function handleCloseModal() {
+    setActiveModal(null);
   }
 
-  function handleCloseInvoice() {
-    setIsInvoiceOpen(false);
-  }
-
-  function handleAdjustLimit() {
-    // eslint-disable-next-line no-console
-    console.log("Ajustar limite");
+  function handleConfirmLimit(newLimit) {
+    setTotalLimit(newLimit);
+    setActiveModal(null);
   }
 
   function handleBlockCard() {
     // eslint-disable-next-line no-console
     console.log("Bloquear cartão");
   }
+
+  const availableLimit = totalLimit - cardOverview.usedLimit;
 
   return (
     <section className="bb-cards">
@@ -51,15 +52,15 @@ export default function Root() {
 
           <CardOverview
             currentInvoice={cardOverview.currentInvoice}
-            availableLimit={cardOverview.availableLimit}
+            availableLimit={availableLimit}
             usedLimit={cardOverview.usedLimit}
-            totalLimit={cardOverview.totalLimit}
+            totalLimit={totalLimit}
           />
 
           <div className="bb-cards__actions">
             <CardActions
-              onViewInvoice={handleOpenInvoice}
-              onAdjustLimit={handleAdjustLimit}
+              onViewInvoice={() => setActiveModal("invoice")}
+              onAdjustLimit={() => setActiveModal("limit")}
               onBlockCard={handleBlockCard}
             />
           </div>
@@ -67,9 +68,18 @@ export default function Root() {
       </div>
 
       <InvoiceModal
-        isOpen={isInvoiceOpen}
+        isOpen={activeModal === "invoice"}
         invoice={currentInvoice}
-        onClose={handleCloseInvoice}
+        onClose={handleCloseModal}
+      />
+
+      <LimitModal
+        isOpen={activeModal === "limit"}
+        currentLimit={totalLimit}
+        minimumLimit={3000}
+        maximumLimit={15000}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmLimit}
       />
     </section>
   );
