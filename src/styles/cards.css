@@ -37,10 +37,11 @@
     "card overview"
     "actions actions";
 
-  gap: 24px 40px;
+  column-gap: 64px;
+  row-gap: 28px;
 
   align-items: start;
-  justify-content: start;
+  justify-content: center;
 
   margin-top: 32px;
 }
@@ -61,7 +62,10 @@
 .bb-cards__actions {
   grid-area: actions;
 
-  max-width: 920px;
+  width: 100%;
+  max-width: 944px;
+
+  justify-self: center;
 }
 
 @media (max-width: 1000px) {
